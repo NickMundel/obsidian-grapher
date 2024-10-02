@@ -1,0 +1,11 @@
+{
+  "id": "obsidian-grapher",
+  "name": "Obsidian Grapher",
+  "version": "0.0.5",
+  "minAppVersion": "0.15.0",
+  "description": "Demonstrates some of the capabilities of the Obsidian API.",
+  "author": "Nick Mundel",
+  "authorUrl": "https://obsidian.md",
+  "fundingUrl": "https://obsidian.md/pricing",
+  "isDesktopOnly": false
+}
