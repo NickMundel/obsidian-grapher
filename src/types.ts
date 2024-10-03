@@ -1,4 +1,4 @@
-import type z from "https://deno.land/x/zod@v3.23.8/index.ts";
+import { z } from "npm:zod";
 import type EventEmitter from "node:events";
 import type { Chart } from "npm:function-plot";
 import type { PlotSchema } from "./verify.ts";

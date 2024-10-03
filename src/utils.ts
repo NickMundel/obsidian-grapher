@@ -1,4 +1,4 @@
-import z from "https://deno.land/x/zod@v3.23.8/index.ts";
+import { z } from "npm:zod";
 import { PlotSchema } from "./verify.ts";
 import { parseYaml } from "npm:obsidian";
 

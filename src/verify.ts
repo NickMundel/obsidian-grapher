@@ -1,4 +1,4 @@
-import { z } from "https://deno.land/x/zod/mod.ts";
+import { z } from "npm:zod";
 
 const Plot = z.object({
   width: z.number().optional(),
