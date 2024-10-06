@@ -1,7 +1,7 @@
-import { z } from "npm:zod";
-import type EventEmitter from "node:events";
-import type { Chart } from "npm:function-plot";
-import type { PlotSchema } from "./verify.ts";
+import { z } from "zod";
+import type { Chart } from "function-plot";
+import type { PlotSchema } from "./verify";
+import { EventEmitter } from "events"
 
 export interface PluginSettings {
   [key: string]: number | string;

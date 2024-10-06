@@ -4,9 +4,9 @@ import {
   PluginSettingTab,
   Setting,
   ValueComponent,
-} from "npm:obsidian";
-import ObsidianFunctionPlot from "../main.ts";
-import { DEFAULT_PLOT_PLUGIN_SETTINGS } from "../types.ts";
+} from "obsidian";
+import ObsidianFunctionPlot from "../main";
+import { DEFAULT_PLOT_PLUGIN_SETTINGS } from "../types";
 export default class SettingsTab extends PluginSettingTab {
   plugin: ObsidianFunctionPlot;
   settingsInputs!: Map<string, ValueComponent<string> | ValueComponent<number>>;

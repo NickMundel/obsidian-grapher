@@ -1,6 +1,6 @@
-import { z } from "npm:zod";
-import { PlotSchema } from "./verify.ts";
-import { parseYaml } from "npm:obsidian";
+import { z } from "zod";
+import { PlotSchema } from "./verify";
+import { parseYaml } from "obsidian";
 
 export function parse(input: string) {
   const parsedStuff = parseYaml(input);

@@ -1,18 +1,13 @@
-import { App, Modal } from "npm:obsidian";
-import functionPlot, { Chart } from "npm:function-plot";
-import type { PlotOptions } from "../types.ts";
-import type ObsidianGrapher from "../main.ts";
-import { mount } from 'npm:svelte';
-
-
+import { App, Modal } from "obsidian";
+import type { PlotOptions } from "../types";
+import type ObsidianGrapher from "../main";
+import { mount } from 'svelte';
+// @ts-ignore
 import Test from "./Test.svelte"
-
-const functionPlotFunc = functionPlot as any as typeof functionPlot.default;
 
 export default class GraphModal extends Modal {
   options!: PlotOptions;
   plugin: ObsidianGrapher;
-  plot!: Chart | null;
 
   onSubmit: (result: PlotOptions) => void;
 
@@ -29,14 +24,18 @@ export default class GraphModal extends Modal {
   override async onClose() {
     let { contentEl } = this;
     contentEl.empty();
-    this.plot = null;
   }
 
   override async onOpen() {
+    const options: PlotOptions = {
+      title: "test",
+      data : []
+    }
+    
     const app = mount(Test, {
       target: this.contentEl,
       props: {
-        variable: 1
+        plot: options
       }
     });
   }

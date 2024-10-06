@@ -2,3 +2,4 @@
 *.js
 deno.lock
 data.json
+package-lock.json

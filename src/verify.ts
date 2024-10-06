@@ -1,4 +1,4 @@
-import { z } from "npm:zod";
+import { z } from "zod";
 
 const Plot = z.object({
   width: z.number().optional(),

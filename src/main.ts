@@ -3,22 +3,20 @@ import {
   type MarkdownPostProcessorContext,
   parseYaml,
   Plugin,
-} from "npm:obsidian";
+} from "obsidian";
 import functionPlot, {
   Chart,
   type FunctionPlotOptions,
-} from "npm:function-plot";
-import { parse } from "./utils.ts";
-import createStylingPlugin from "./styling.ts";
-import SettingsTab from "./ui/settings.ts";
+} from "function-plot";
+import { parse } from "./utils";
+import createStylingPlugin from "./styling";
+import SettingsTab from "./ui/settings";
 import {
   type chartType,
   DEFAULT_PLOT_PLUGIN_SETTINGS,
   type PluginSettings,
-} from "./types.ts";
-import GraphModal from "./ui/modal.ts";
-
-const functionPlotFunc = functionPlot as any as typeof functionPlot.default;
+} from "./types";
+import GraphModal from "./ui/modal";
 
 export default class ObsidianGrapher extends Plugin {
   settings!: PluginSettings;
@@ -35,6 +33,11 @@ export default class ObsidianGrapher extends Plugin {
     console.log("loaded");
 
     this.addSettingTab(new SettingsTab(this.app, this));
+
+    this.addCommand({
+      id: "insert-functionplot2",
+      name: "Plot a function2",
+    });
 
     this.addCommand({
       id: "insert-functionplot",
@@ -86,7 +89,7 @@ export default class ObsidianGrapher extends Plugin {
         options.target = el;
         options.plugins = [this.pluginSettings];
 
-        this.graphs.push(functionPlotFunc(options));
+        this.graphs.push(functionPlot(options));
       } catch (e) {
         console.log(e);
       }

@@ -1,5 +1,5 @@
-import ObsidianGrapher from "./main.ts";
-import type { chartType } from "./types.ts";
+import ObsidianGrapher from "./main";
+import type { chartType } from "./types";
 
 export default function createStylingPlugin(plugin: ObsidianGrapher) {
   return function stylingPlugin(instance: chartType) {

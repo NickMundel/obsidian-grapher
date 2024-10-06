@@ -1,13 +1,8 @@
 <script lang="ts">
-  export let variable: number;
+  import Plot from "./components/Plot.svelte"
+  import {PlotOptions} from "../types"
+
+  let {plot}: PlotOptions = $props();
 </script>
 
-<div class="number">
-  <span>My number is {variable}!</span>
-</div>
-
-<style>
-  .number {
-    color: red;
-  }
-</style>
+<Plot plot={plot}/>
